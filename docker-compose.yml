@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres
+    container_name: blockApp
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=blockDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - blockdata:/var/lib/postgresql/data
+volumes:
+    blockdata:
